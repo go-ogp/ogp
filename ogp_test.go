@@ -3,7 +3,7 @@ package ogp_test
 import (
 	"fmt"
 
-	"github.com/go-ogp/ogp"
+	"gopkg.in/ogp.v1"
 )
 
 func ExampleWebsite() {
