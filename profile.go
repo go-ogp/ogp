@@ -133,30 +133,30 @@ func (b *ProfileBuilder) meta(ns string) *metaBuilder {
 	}
 	if b.firstName != "" {
 		if ns == "og" {
-			mb.Add("profile", "first_name", b.url)
+			mb.Add("profile", "first_name", b.firstName)
 		} else {
-			mb.Add(ns, "first_name", b.url)
+			mb.Add(ns, "first_name", b.firstName)
 		}
 	}
 	if b.lastName != "" {
 		if ns == "og" {
-			mb.Add("profile", "last_name", b.url)
+			mb.Add("profile", "last_name", b.lastName)
 		} else {
-			mb.Add(ns, "last_name", b.url)
+			mb.Add(ns, "last_name", b.lastName)
 		}
 	}
 	if b.username != "" {
 		if ns == "og" {
-			mb.Add("profile", "username", b.url)
+			mb.Add("profile", "username", b.username)
 		} else {
-			mb.Add(ns, "username", b.url)
+			mb.Add(ns, "username", b.username)
 		}
 	}
 	if b.gender != "" {
 		if ns == "og" {
-			mb.Add("profile", "gender", b.url)
+			mb.Add("profile", "gender", b.gender)
 		} else {
-			mb.Add(ns, "gender", b.url)
+			mb.Add(ns, "gender", b.gender)
 		}
 	}
 	return &mb

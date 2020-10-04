@@ -59,3 +59,18 @@ func Episode() *VideoEpisodeBuilder {
 func VideoOther() *VideoOtherBuilder {
 	return &VideoOtherBuilder{}
 }
+
+// Image is the convrnient way for creating an ImageBuilder.
+func Image() *ImageBuilder {
+	return &ImageBuilder{}
+}
+
+// Video is the convrnient way for creating an VideoBuilder.
+func Video() *VideoBuilder {
+	return &VideoBuilder{}
+}
+
+// Audio is the convrnient way for creating an AudioBuilder.
+func Audio() *AudioBuilder {
+	return &AudioBuilder{}
+}

@@ -13,10 +13,41 @@ _Note_. This is not an Open Graph metadata parser (yet)!
 
 ## Getting Started
 
-Use `go get` to install OGP library into your awesome project:
+Use `go get` to install OGP library into your project:
 
 ```sh
 $ go get -u gopkg.in/ogp.v1
+```
+
+Then, you can build OpenGraph objects:
+
+```go
+// main.go
+func Handler(w http.ResponseWriter, r *http.Request) {
+    ...
+    ogpProfile := ogp.Profile().
+        Title("John Smith").
+        URL("http://jsmith.me").
+        Image(ogp.Image().URL("http://jsmith.me/avatar.jpg")).
+        FirstName("John").
+        LastName("Smith").
+        Username("jsmith").
+        HTML()
+    tmpl.Execute("", &struct{
+        OGP: ogpProfile,
+        ...
+    })
+}
+```
+
+And, express them in Go templates:
+
+```html
+<head prefix="og: https://ogp.me/ns#">
+  <!-- ... -->
+  {{ .OGP }}
+  <!-- ... -->
+</head>
 ```
 
 ## License
